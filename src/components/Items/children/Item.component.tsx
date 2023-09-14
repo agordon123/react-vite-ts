@@ -1,15 +1,19 @@
-import React from 'react'
+import React from "react";
 // import reference to our interface
-import { ItemInterface } from '../../../models/items/item.interface'
+import { ItemInterface } from "../../../models/items/item.interface";
 // component props type:
 type Props = {
-  testid: string
-  model: ItemInterface,
-  onItemSelect: (item: ItemInterface) => void
-}
+  testid: string;
+  model: ItemInterface;
+  onItemSelect: (item: ItemInterface) => void;
+};
 // example using functional component syntax
-export const ItemComponent: React.FC<Props> = ({ testid, model, onItemSelect }) => {
-  const cssClass = model?.selected ? 'item selected' : 'item';
+export const ItemComponent: React.FC<Props> = ({
+  testid,
+  model,
+  onItemSelect,
+}) => {
+  const cssClass = model?.selected ? "item selected" : "item";
   const handleItemClick = () => {
     onItemSelect(model);
   };

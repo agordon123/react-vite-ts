@@ -5,7 +5,7 @@ import { ItemInterface } from "@/models/items/item.interface";
 // import a reference to your ItemsList component:
 import { useAppStore } from "../store/root";
 import { ItemsListComponent } from "../components/Items";
-
+import React from 'react';
 
 export function ItemsView() {
   // get a reference to our itemsStore instanceusing our useAppStore() hook:

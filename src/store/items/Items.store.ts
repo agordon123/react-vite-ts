@@ -8,6 +8,7 @@ import { ItemInterface } from "@/models/items/item.interface";
 // import a refence to our itemsStoreSlice
 import { itemsStoreSlice } from "./Items.slice";
 //Root State and Root Store interface are confusing as fuck
+import { apiClient } from '../../api-client'
 
 /**
  * @name useItemsActions
@@ -19,31 +20,14 @@ export function useItemsActions(commit: Dispatch<any>) {
   const mutations = itemsStoreSlice.actions;
   // our items store actions implementation:
   const actions = {
+    // action that we invoke to load the items from an api:
     loadItems: async () => {
-      // set loading to true
-      commit(mutations.setLoading(true));
-      // mock some data
-      const mockItems: ItemInterface[] = [
-        { id: 1, name: "Item 1", selected: false },
-        {
-          id: 2,
-          name: "Item 2",
-          selected: false,
-        },
-        {
-          id: 3,
-          name: "Item 3",
-          selected: false,
-        },
-      ];
+    // set loading to true
+    commit(mutations.setLoading(true))
+    // begin: remove code
+    const data = await apiClient.items.fetchItems();
+    commit(mutations.setItems(data))
 
-      // let's pretend we called some API end-point
-      // and it takes 1 second to return the data
-      // by using javascript setTimeout with 1000 for the milliseconds option
-      setTimeout(() => {
-        // commit our mutation by setting state.items to the data loaded
-        commit(mutations.setItems(mockItems));
-      }, 1000);
     },
     toggleItemSelected: async (item: ItemInterface) => {
       console.log("ItemsStore: action: toggleItemSelected", item);
@@ -68,3 +52,4 @@ export interface ItemsStoreInterface {
   actions: ReturnType<typeof useItemsActions>; // use TS type inference
   getters: ReturnType<typeof useItemsGetters>; // use TS type inference
 }
+

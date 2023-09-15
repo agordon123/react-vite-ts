@@ -44,7 +44,7 @@ export class HttpClientFetch implements HttpClientInterface {
         ...headers,
       };
     }
-    if (!options.headers?.hasOwnProperty("Content-Type")) {
+    if (!Object.prototype.hasOwnProperty.call(options.headers, "Content-Type")) {
       // default to content-type json
       options.headers = {
         ...headers,

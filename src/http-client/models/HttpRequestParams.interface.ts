@@ -1,5 +1,5 @@
 // file: src/http-client/models/HttpRequestParams.interface.ts
-import { HttpRequestType } from './Constants'
+import { HttpRequestType } from "./Constants";
 /**
 * @name HttpRequestParamsInterface
 * @description
@@ -11,10 +11,10 @@ l,
 f POST or PUT for example)
 */
 export interface HttpRequestParamsInterface<P = void> {
-requestType: HttpRequestType
-endpoint: string
-requiresToken: boolean
-headers?: { [key: string]: string }
-payload?: P
-mockDelay?: number
+  requestType: HttpRequestType;
+  endpoint: string;
+  requiresToken: boolean;
+  headers?: { [key: string]: string };
+  payload?: P;
+  mockDelay?: number;
 }

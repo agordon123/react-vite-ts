@@ -1,4 +1,7 @@
 // file: src/tests/unit/http-client/axios-client/AxiosClient.request.post.test.ts
+/// <reference types="vitest" />
+/// <reference types="vite/client" />
+
 import axios, { AxiosResponse } from "axios";
 import {
   HttpClientAxios,

@@ -9,13 +9,14 @@
     "build-beta": "tsc && vite build --config vite.config.production.ts --mode beta",
     "build-local": "tsc && vite build --config vite.config.production.ts --mode localapis",
     "build-mock": "tsc && vite build --config vite.config.mock.ts --mode mock",
+    "start-local": "vite --config vite.config.production.ts --mode localapis",
     "preview": "vite preview --config vite.config.mock.ts --mode mock",
     "start": "npm run dev",
-    "start-local": "vite --config vite.config.production.ts --mode localapis",
     "with-jsonserver": "vite --config vite.config.jsonserver.ts --mode jsonserver",
     "json-server-api": "json-server --port 3111 --watch json-server/db.json",
-    "test": "vitest run",
-    "test-watch": "npm run test -- --watch"
+    "test": "vitest run --config vite.config.mock.ts --mode mock",
+    "test-watch": "vitest watch --config vite.config.mock.ts --mode mock",
+    "test-coverage": "vitest run --coverage --config vite.config.mock.ts --mode mock"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.5",

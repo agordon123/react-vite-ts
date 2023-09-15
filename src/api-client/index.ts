@@ -1,7 +1,7 @@
 import { ApiClientInterface } from "./models/ApiClient.interface";
 import { apiMockClient } from "./mock/items";
 import { apiLiveClient } from "./live";
-
+import { config } from "@/config";
 let env: string = "mock";
 if (import.meta.env && import.meta.env.VITE_API_CLIENT) {
   env = import.meta.env.VITE_API_CLIENT.trim();

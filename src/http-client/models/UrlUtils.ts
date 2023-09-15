@@ -1,10 +1,12 @@
 // file: src/http-client/models/UrlUtils.ts
 export interface UrlUtilsInterface {
-    getFullUrlWithParams(baseUrl: string, params: { [key: string]: number | string }):
-    string
-    }
-    export const UrlUtils: UrlUtilsInterface = {
-    /**
+  getFullUrlWithParams(
+    baseUrl: string,
+    params: { [key: string]: number | string }
+  ): string;
+}
+export const UrlUtils: UrlUtilsInterface = {
+  /**
     * @name getFullUrlWithParams
     * @description Returns the full formatted url for an API end-point
     * by replacing parameters place holder with the actual values.
@@ -14,16 +16,18 @@ export interface UrlUtilsInterface {
     ameter
     * @returns The fully formatted API end-point url with the actual parameter values
     */
-    getFullUrlWithParams: (baseUrl: string, params: { [key: string]: number | string }
-    ): string => {
-    const keys: string[] = Object.keys(params || {})
-    if ((baseUrl || '').indexOf('[') === -1 || keys.length === 0) {
-    return baseUrl
+  getFullUrlWithParams: (
+    baseUrl: string,
+    params: { [key: string]: number | string }
+  ): string => {
+    const keys: string[] = Object.keys(params || {});
+    if ((baseUrl || "").indexOf("[") === -1 || keys.length === 0) {
+      return baseUrl;
     }
-    let fullUrl = baseUrl
+    let fullUrl = baseUrl;
     keys.forEach((key) => {
-    fullUrl = fullUrl.replace(`[${key}]`, (params[key] || 'null').toString())
-    })
-    return fullUrl
-    }
-    }
+      fullUrl = fullUrl.replace(`[${key}]`, (params[key] || "null").toString());
+    });
+    return fullUrl;
+  },
+};

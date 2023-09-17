@@ -1,7 +1,7 @@
 import axios, { AxiosRequestConfig, AxiosResponse } from "axios";
 import { ItemsApiClientOptions } from "./ItemsApiClientOptions.interface";
 import { ItemsApiClientInterface } from "./ItemsApiClient.interface";
-import { ItemInterface } from "@/models/items/item.interface";
+import { ItemInterface } from "../../../models/items/item.interface";
 
 /**
  * @Name ItemsApiClientModel

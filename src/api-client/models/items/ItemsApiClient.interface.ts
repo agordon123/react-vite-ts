@@ -1,4 +1,4 @@
-import { ItemInterface } from "@/models/items/item.interface"
+import { ItemInterface } from "../../../models/items/item.interface"
 /**
  * @Name ItemsApiClientInterface
  * @description

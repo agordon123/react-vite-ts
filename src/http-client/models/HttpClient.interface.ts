@@ -1,14 +1,17 @@
 // files: src/http-client/models/HttpClient.interface.ts
-import { HttpRequestParamsInterface } from "./HttpRequestParams.interface";
+
+import { HttpRequestParamsInterface } from './HttpRequestParams.interface'
+
 /**
  * @name HttpClientConfigInterface
  * @description
  * We'll drive the HttpClient from configuration in later chapters.
  */
 export interface HttpClientConfigInterface {
-  tokenKey: string;
-  clientType: string;
+  tokenKey: string
+  clientType: string
 }
+
 /**
  * @name HttpClientInterface
  * @description
@@ -24,5 +27,5 @@ export interface HttpClientInterface {
    * The type P specify the type of payload if any
    * @returns A Promise<R> as the implementation of this method will be async.
    */
-  request<R, P = void>(parameters: HttpRequestParamsInterface<P>): Promise<R>;
+  request<R, P = void>(parameters: HttpRequestParamsInterface<P>): Promise<R>
 }

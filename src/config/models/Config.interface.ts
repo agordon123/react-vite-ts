@@ -1,4 +1,9 @@
-import { ItemsApiClientOptions } from "@/api-client/models/items";
+// file: src/config/models/Config.interface.ts
+
+import {
+  ItemsApiClientOptions,
+  LocalizationApiClientOptions,
+} from "../../api-client/models";
 
 export interface HttpClientConfigInterface {
   tokenKey: string;
@@ -15,11 +20,20 @@ export interface ConfigInterface {
     // ... things that are not specific to a single app domain
     version: number;
   };
+
   httpClient: HttpClientConfigInterface;
+
   apiClient: {
     type: string;
   };
+
   items: {
     apiClientOptions: ItemsApiClientOptions;
+  };
+
+  localization: {
+    apiClientOptions: LocalizationApiClientOptions;
+    locales: { key: string; isDefault: boolean }[];
+    localStorageCache: { enabled: boolean; expirationInMinutes: number };
   };
 }

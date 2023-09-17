@@ -1,5 +1,5 @@
-import { ConfigInterface } from "./ models/Config.interface";
-import { configFilesMap } from "./config-file.map";
+import { ConfigInterface } from "./models/Config.interface";
+import { configFilesMap } from "./config-files-map";
 import { getAppConfigKey } from "./utils";
 
 if (!configFilesMap.has(getAppConfigKey())) {

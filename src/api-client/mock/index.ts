@@ -1,19 +1,8 @@
-// file: src/api-client/mock/items/index.ts
-import {
-  ItemsApiClientOptions,
-  ItemsApiClientModel,
-  ItemsApiClientInterface,
-} from "../models/items";
 
-const options: ItemsApiClientOptions = {
-  endpoints: {
-   fetchItems: '/jsonserver/items',
-  },
-  mockDelay: 1000,
-};
-// instantiate the ItemsApiClient pointing at the url that returns static json mock data
-const itemsApiClient: ItemsApiClientInterface = new ItemsApiClientModel(
-  options
-);
-// export our instance
-export { itemsApiClient };
+import { LocalizationApiClientModel,LocalizationApiClientInterface } from './localization';
+// import module instances
+import { config } from '@/config';
+const localizationApiClient: LocalizationApiClientInterface = new LocalizationApiClientModel(config.localization.apiClientOptions)
+
+// create an instance of our main ApiClient that wraps the mock child clients
+export {localizationApiClient}

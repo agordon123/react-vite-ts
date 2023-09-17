@@ -1,5 +1,4 @@
-
-import { LocalizationApiClientModel,LocalizationApiClientInterface } from './localization';
+import { LocalizationApiClientModel,LocalizationApiClientInterface } from '../models';
 // import module instances
 import { config } from '@/config';
 const localizationApiClient: LocalizationApiClientInterface = new LocalizationApiClientModel(config.localization.apiClientOptions)
